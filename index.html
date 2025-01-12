@@ -120,16 +120,12 @@
                 `;
             }, 1000);
         }
-     // Initialize LIFF
-        liff.init({ liffId: "2006765875-Nmq6Yja7" })
-            .then(() => {
-                if (!liff.isLoggedIn()) {
-                    liff.login(); // Redirect to LINE login if not logged in
-                }
-            })
-            .catch(err => {
-                console.error("LIFF Initialization failed", err);
-            });
+    var liffID = '2006765875-Nmq6Yja7';
+
+liff.init({
+  liffId: liffID
+}).then(function() {
+  console.log('LIFF init');
 
         // Fetch User Profile
         function fetchProfile() {
