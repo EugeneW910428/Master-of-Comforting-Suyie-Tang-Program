@@ -99,12 +99,24 @@
                 chineseContent.forEach(el => el.style.display = 'block');
             }
         }
+
+        function sendCash() {
+            const responseDiv = document.getElementById('cash-response');
+            responseDiv.style.display = 'block';
+            setTimeout(() => {
+                responseDiv.innerHTML = `
+                    <h3>Transaction Successful!</h3>
+                    <p>Susie is now ${Math.floor(Math.random() * 1000)} dollars richer! 💸</p>
+                    
+                `;
+            }, 1500);
+        }
     </script>
 </head>
 <body onload="switchLanguage('en')">
     <header>
         <h1 class="en">Welcome to the Master of Comforting Suyie</h1>
-        <h1 class="zh" style="display:none;">歡迎來到安慰素怡碩士課程</h1>
+        <h1 class="zh" style="display:none;">歡迎來到安慰素怡大師課程</h1>
         <p class="en">Your guide to becoming the ultimate emotional support expert for Suyie.</p>
         <p class="zh" style="display:none;">成為素怡專屬情感支持專家的指南。</p>
     </header>
@@ -137,8 +149,12 @@
         </ul>
         <div class="cta en" onclick="showSurprise()">Enroll Now</div>
         <div class="cta zh" onclick="showSurprise()" style="display:none;">立即報名</div>
+        <div class="cta" onclick="sendCash()">Send Cash to Susie</div>
         <div id="surprise" class="surprise">
             <p>Loading a surprise for you...</p>
+        </div>
+        <div id="cash-response" class="surprise" style="display:none;">
+            <p>Processing your generous donation...</p>
         </div>
     </section>
     <section id="testimonials">
