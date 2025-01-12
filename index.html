@@ -51,88 +51,66 @@
             bottom: 0;
             width: 100%;
         }
-        .language-switch {
+        .surprise {
+            display: none;
             text-align: center;
-            margin: 20px 0;
+            margin-top: 20px;
         }
-        .language-switch button {
-            margin: 0 10px;
-            padding: 10px 20px;
-            background-color: #ff7f50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .surprise img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
     <script>
-        function switchLanguage(lang) {
-            const englishContent = document.querySelectorAll('.en');
-            const chineseContent = document.querySelectorAll('.zh');
-            if (lang === 'en') {
-                englishContent.forEach(el => el.style.display = 'block');
-                chineseContent.forEach(el => el.style.display = 'none');
-            } else if (lang === 'zh') {
-                englishContent.forEach(el => el.style.display = 'none');
-                chineseContent.forEach(el => el.style.display = 'block');
-            }
+        function showSurprise() {
+            const surpriseDiv = document.getElementById('surprise');
+            surpriseDiv.style.display = 'block';
+            setTimeout(() => {
+                surpriseDiv.innerHTML = `
+                    <h3>You’ve unlocked the secret to Suyie’s smile!</h3>
+                    <p>Here’s a dancing potato to make your day brighter, just like you make Suyie’s!</p>
+                    <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" alt="Dancing Potato">
+                    <p><strong>P.S.:</strong> Suyie, keep being awesome! 😊</p>
+                `;
+            }, 1000);
         }
     </script>
 </head>
-<body onload="switchLanguage('en')">
+<body>
     <header>
-        <h1 class="en">Welcome to the Master of Comforting Suyie</h1>
-        <h1 class="zh" style="display:none;">歡迎來到安慰素怡大師課程</h1>
-        <p class="en">Your guide to becoming the ultimate emotional support expert for SuYie.</p>
-        <p class="zh" style="display:none;">成為素怡專屬情感支持專家的指南。</p>
+        <h1>Welcome to the Master of Comforting Suyie</h1>
+        <p>Your guide to becoming the ultimate emotional support expert for Suyie.</p>
     </header>
-    <div class="language-switch">
-        <button onclick="switchLanguage('en')">English</button>
-        <button onclick="switchLanguage('zh')">中文</button>
-    </div>
     <nav>
-        <a href="#course-details" class="en">Course Details</a>
-        <a href="#course-details" class="zh" style="display:none;">課程詳情</a>
-        <a href="#testimonials" class="en">Testimonials</a>
-        <a href="#testimonials" class="zh" style="display:none;">學員評價</a>
-        <a href="#contact" class="en">Contact Us</a>
-        <a href="#contact" class="zh" style="display:none;">聯繫我們</a>
+        <a href="#course-details">Course Details</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact Us</a>
     </nav>
     <section id="course-details">
-        <h2 class="en">Course Details</h2>
-        <h2 class="zh" style="display:none;">課程詳情</h2>
-        <p class="en">This exclusive course is designed to help you master the art of comforting SuYie. Over 1-2 years, you'll learn personalized skills, emotional intelligence techniques, and advanced strategies to ensure Su Yi's happiness.</p>
-        <p class="zh" style="display:none;">本課程專為幫助您掌握安慰素怡的藝術而設計。在 1-2 年內，您將學習個性化技能、情商技巧以及先進策略，確保素怡的幸福。</p>
+        <h2>Course Details</h2>
+        <p>This exclusive course is designed to help you master the art of comforting Suyie. Over 1-2 years, you'll learn personalized skills, emotional intelligence techniques, and advanced strategies to ensure Suyie's happiness.</p>
         <ul>
-            <li class="en"><strong>Module 1:</strong> Understanding SuYie's Emotions</li>
-            <li class="zh" style="display:none;"><strong>模組 1：</strong> 理解素怡的情感</li>
-            <li class="en"><strong>Module 2:</strong> Personalized Comforting Language</li>
-            <li class="zh" style="display:none;"><strong>模組 2：</strong> 個性化安慰語言</li>
-            <li class="en"><strong>Module 3:</strong> Action-Based Support Strategies</li>
-            <li class="zh" style="display:none;"><strong>模組 3：</strong> 行動為基礎的支持策略</li>
-            <li class="en"><strong>Module 4:</strong> Advanced SuYie Psychology</li>
-            <li class="zh" style="display:none;"><strong>模組 4：</strong> 高級素怡心理學</li>
+            <li><strong>Module 1:</strong> Understanding Suyie's Emotions</li>
+            <li><strong>Module 2:</strong> Personalized Comforting Language</li>
+            <li><strong>Module 3:</strong> Action-Based Support Strategies</li>
+            <li><strong>Module 4:</strong> Advanced Suyie Psychology</li>
         </ul>
-        <div class="cta en">Enroll Now</div>
-        <div class="cta zh" style="display:none;">立即報名</div>
+        <div class="cta" onclick="showSurprise()">Enroll Now</div>
+        <div id="surprise" class="surprise">
+            <p>Loading a surprise for you...</p>
+        </div>
     </section>
     <section id="testimonials">
-        <h2 class="en">What People Are Saying</h2>
-        <h2 class="zh" style="display:none;">學員評價</h2>
-        <p class="en">"This course completely changed my life. Now SuYie smiles every day!" - Graduate</p>
-        <p class="zh" style="display:none;">"這門課程徹底改變了我的生活。現在素怡每天都在微笑！" - 畢業生</p>
-        <p class="en">"I've never felt closer to SuYie. 10/10 would recommend." - Alumni</p>
-        <p class="zh" style="display:none;">"我從未感到與素怡如此親近。10/10，強烈推薦。" - 校友</p>
+        <h2>What People Are Saying</h2>
+        <p>"This course completely changed my life. Now Suyie smiles every day!" - Graduate</p>
+        <p>"I've never felt closer to Suyie. 10/10 would recommend." - Alumni</p>
     </section>
     <section id="contact">
-        <h2 class="en">Contact Us</h2>
-        <h2 class="zh" style="display:none;">聯繫我們</h2>
-        <p class="en">Have questions? Reach out to us at <a href="mailto:info@suyi-comforting.com">info@suyi-comforting.com</a>.</p>
-        <p class="zh" style="display:none;">有任何問題？請通過電子郵件聯繫我們：<a href="mailto:info@suyi-comforting.com">info@suyi-comforting.com</a>。</p>
+        <h2>Contact Us</h2>
+        <p>Have questions? Reach out to us at <a href="mailto:info@suyi-comforting.com">info@suyi-comforting.com</a>.</p>
     </section>
     <footer>
-        <p class="en">&copy; 2025 Master of Comforting Su Yi. All rights reserved.</p>
-        <p class="zh" style="display:none;">&copy; 2025 安慰素怡大師課程。保留所有權利。</p>
+        <p>&copy; 2025 Master of Comforting Suyie. All rights reserved.</p>
     </footer>
 </body>
 </html>
