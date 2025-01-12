@@ -104,9 +104,6 @@
             background-color: #5A2E73;
         }
     </style>
-
-
-    
     <script>
         function showSurprise() {
             const surpriseDiv = document.getElementById('surprise');
@@ -120,43 +117,7 @@
                 `;
             }, 1000);
         }
-    var liffID = '2006765875-Nmq6Yja7';
 
-liff.init({
-  liffId: liffID
-}).then(function() {
-  console.log('LIFF init');
-
-        // Fetch User Profile
-        function fetchProfile() {
-            liff.getProfile()
-                .then(profile => {
-                    document.getElementById("userName").textContent = `Hello, ${profile.displayName}!`;
-                })
-                .catch(err => {
-                    console.error("Error getting profile", err);
-                });
-        }
-
-        // Send Message
-        function sendMessage() {
-            if (liff.isInClient()) {
-                liff.sendMessages([
-                    {
-                        type: "text",
-                        text: "This is a message sent from my LIFF app!"
-                    }
-                ])
-                .then(() => {
-                    alert("Message sent successfully!");
-                })
-                .catch(err => {
-                    console.error("Error sending message", err);
-                });
-            } else {
-                alert("This feature is only available in the LINE app.");
-            }
-        }
         function switchLanguage(lang) {
             const englishContent = document.querySelectorAll('.en');
             const chineseContent = document.querySelectorAll('.zh');
@@ -176,6 +137,7 @@ liff.init({
                 responseDiv.innerHTML = `
                     <h3>Transaction Successful!</h3>
                     <p>Susie is now ${Math.floor(Math.random() * 1000)} dollars richer! 💸</p>
+                    <p>Just kidding! Your wallet is safe... for now. 😜</p>
                 `;
             }, 1500);
         }
@@ -199,28 +161,21 @@ liff.init({
         <a href="#testimonials" class="zh" style="display:none;">學員評價</a>
         <a href="#contact" class="en">Contact Us</a>
         <a href="#contact" class="zh" style="display:none;">聯繫我們</a>
-        <button onclick="fetchProfile()">Get My Profile</button>
-        <button onclick="sendMessage()">Send Message</button>
     </nav>
-    
     <section id="course-details">
         <h2 class="en">Course Details</h2>
         <h2 class="zh" style="display:none;">課程詳情</h2>
         <p class="en">This exclusive course is designed to help you master the art of comforting Suyie. Over 1-2 years, you'll learn personalized skills, emotional intelligence techniques, and advanced strategies to ensure Suyie's happiness.</p>
         <p class="zh" style="display:none;">本課程專為幫助您掌握安慰素怡的藝術而設計。在 1-2 年內，您將學習個性化技能、情商技巧以及先進策略，確保素怡的幸福。</p>
         <ul>
-     <a href="module1.html" class="en">Module 1: Understanding Suyie's Emotions</a>
-        <a href="module1.html" class="zh" style="display:none;">模組 1：理解素怡的情感</a>
-        <a href="module2.html" class="en">Module 2: Personalized Comforting Language</a>
-        <a href="module2.html" class="zh" style="display:none;">模組 2：個性化安慰語言</a>
-        <a href="module3.html" class="en">Module 3: Action-Based Support Strategies</a>
-        <a href="module3.html" class="zh" style="display:none;">模組 3：行動為基礎的支持策略</a>
-        <a href="module4.html" class="en">Module 4: Advanced Suyie Psychology</a>
-        <a href="module4.html" class="zh" style="display:none;">模組 4：高級素怡心理學</a>
+            <a href="module1.html">Module 1: Understanding Suyie's Emotions</a>
+            <a href="module2.html">Module 2: Personalized Comforting Language</a>
+            <a href="module3.html">Module 3: Action-Based Support Strategies</a>
+            <a href="module4.html">Module 4: Advanced Suyie Psychology</a>
         </ul>
         <div class="cta en" onclick="showSurprise()">Enroll Now</div>
         <div class="cta zh" onclick="showSurprise()" style="display:none;">立即報名</div>
-        <div class="cta" onclick="sendCash()">Make Suyie Smile</div>
+        <div class="cta" onclick="sendCash()">Send Cash to Susie</div>
         <div id="surprise" class="surprise">
             <p>Loading a surprise for you...</p>
         </div>
@@ -239,8 +194,8 @@ liff.init({
     <section id="contact">
         <h2 class="en">Contact Us</h2>
         <h2 class="zh" style="display:none;">聯繫我們</h2>
-        <p class="en">Have questions? Reach out to us at <a href="mailto:info@suyi-comforting.com">info@suyie-comforting.com</a>.</p>
-        <p class="zh" style="display:none;">有任何問題？請通過電子郵件聯繫我們：<a href="mailto:info@suyi-comforting.com">info@suyie-comforting.com</a>。</p>
+        <p class="en">Have questions? Reach out to us at <a href="mailto:info@suyi-comforting.com">info@suyi-comforting.com</a>.</p>
+        <p class="zh" style="display:none;">有任何問題？請通過電子郵件聯繫我們：<a href="mailto:info@suyi-comforting.com">info@suyi-comforting.com</a>。</p>
     </section>
     <footer>
         <p class="en">&copy; 2025 Master of Comforting Suyie. All rights reserved.</p>
@@ -248,3 +203,4 @@ liff.init({
     </footer>
 </body>
 </html>
+
