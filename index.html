@@ -3,128 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 1: Understanding Suyie's Emotions</title>
+    <title>Master of Comforting Suyie</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #f4f4f4;
             color: #333;
+            line-height: 1.6;
         }
         header {
-            background-color: #ff7f50;
+            background-color: #6C3483;
             color: white;
-            padding: 30px 20px;
+            padding: 30px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         nav {
             text-align: center;
             margin: 20px 0;
-            background-color: #fff;
-            padding: 10px 0;
-            border-bottom: 2px solid #ff7f50;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #ff7f50;
+            color: #6C3483;
             font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        nav a:hover {
-            background-color: #ff7f50;
-            color: white;
+            font-size: 1.1rem;
         }
         section {
-            padding: 30px;
-            max-width: 900px;
+            padding: 20px;
+            max-width: 800px;
             margin: auto;
-            background: white;
+            background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        section h2 {
-            color: #ff7f50;
-            border-bottom: 2px solid #ff7f50;
-            padding-bottom: 5px;
+        h2 {
+            color: #6C3483;
+            text-align: center;
             margin-bottom: 20px;
         }
-        section h3 {
-            color: #444;
-            margin-top: 30px;
+        ul {
+            list-style: none;
+            padding: 0;
         }
-        section p, section ul {
-            line-height: 1.8;
-            margin-bottom: 20px;
-            color: #555;
+        ul li {
+            margin-bottom: 15px;
+            background: #f9f9f9;
+            padding: 10px;
+            border-left: 5px solid #6C3483;
         }
-        section ul {
-            list-style-type: square;
-            padding-left: 20px;
+        .cta {
+            display: inline-block;
+            background-color: #6C3483;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            margin: 20px auto;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .cta:hover {
+            background-color: #5A2E73;
         }
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 15px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative;
+        }
+        .surprise {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .surprise img {
+            max-width: 100%;
+            height: auto;
+        }
+        .language-switch {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .language-switch button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #6C3483;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .language-switch button:hover {
+            background-color: #5A2E73;
         }
     </style>
+    <script>
+        function showSurprise() {
+            const surpriseDiv = document.getElementById('surprise');
+            surpriseDiv.style.display = 'block';
+            setTimeout(() => {
+                surpriseDiv.innerHTML = `
+                    <h3>You’ve unlocked the secret to Suyie’s smile!</h3>
+                    <p>Here’s an adorable Chikawa to brighten your day, just like you brighten Suyie’s!</p>
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWJ6eGd3NWlxaHdpbHpmMjU0NXJxbmc1NGhudnE5bGg5cXplaXpweCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fSEoD7tXf6esHkpwpN/giphy.gif" alt="Chikawa">
+                    <p><strong>P.S.:</strong> Suyie, keep being awesome! 😊</p>
+                `;
+            }, 1000);
+        }
+
+        function switchLanguage(lang) {
+            const englishContent = document.querySelectorAll('.en');
+            const chineseContent = document.querySelectorAll('.zh');
+            if (lang === 'en') {
+                englishContent.forEach(el => el.style.display = 'block');
+                chineseContent.forEach(el => el.style.display = 'none');
+            } else if (lang === 'zh') {
+                englishContent.forEach(el => el.style.display = 'none');
+                chineseContent.forEach(el => el.style.display = 'block');
+            }
+        }
+
+        function sendCash() {
+            const responseDiv = document.getElementById('cash-response');
+            responseDiv.style.display = 'block';
+            setTimeout(() => {
+                responseDiv.innerHTML = `
+                    <h3>Transaction Successful!</h3>
+                    <p>Susie is now ${Math.floor(Math.random() * 1000)} dollars richer! 💸</p>
+                    <p>Just kidding! Your wallet is safe... for now. 😜</p>
+                `;
+            }, 1500);
+        }
+    </script>
 </head>
-<body>
+<body onload="switchLanguage('en')">
     <header>
-        <h1>Module 1: Understanding Suyie's Emotions</h1>
+        <h1 class="en">Welcome to the Master of Comforting Suyie</h1>
+        <h1 class="zh" style="display:none;">歡迎來到安慰素怡大師課程</h1>
+        <p class="en">Your guide to becoming the ultimate emotional support expert for Suyie.</p>
+        <p class="zh" style="display:none;">成為素怡專屬情感支持專家的指南。</p>
     </header>
+    <div class="language-switch">
+        <button onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('zh')">中文</button>
+    </div>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="module2.html">Next Module</a>
+        <a href="#course-details" class="en">Course Details</a>
+        <a href="#course-details" class="zh" style="display:none;">課程詳情</a>
+        <a href="#testimonials" class="en">Testimonials</a>
+        <a href="#testimonials" class="zh" style="display:none;">學員評價</a>
+        <a href="#contact" class="en">Contact Us</a>
+        <a href="#contact" class="zh" style="display:none;">聯繫我們</a>
     </nav>
-    <section>
-        <h2>Objective</h2>
-        <p>Learn the art of observing and interpreting subtle emotional cues to better understand Suyie's needs and respond with empathy and support.</p>
-
-        <h2>Content</h2>
-        <h3>1. The Science of Emotions</h3>
-        <p><strong>What Are Emotions?</strong> Emotions are complex psychological states that involve three components: subjective experience, physiological response, and behavioral expression. This section explores the connection between emotions and the brain, focusing on the limbic system and its role in emotional regulation.</p>
-        <p><strong>Why Emotions Matter in Relationships:</strong> Emotions act as signals that guide human interaction. Understanding how emotions affect behavior can help strengthen your bond with Suyie.</p>
-
-        <h3>2. Emotional Recognition Techniques</h3>
-        <p><strong>Microexpressions:</strong> Learn to identify fleeting facial expressions that reveal genuine emotions, even when someone tries to hide them.</p>
-        <p><strong>Body Language:</strong> Recognize how posture, gestures, and movement reflect emotional states. For example, crossed arms might signal discomfort or defensiveness.</p>
-        <p><strong>Vocal Cues:</strong> Analyze changes in tone, pitch, and speed of speech to detect underlying feelings.</p>
-
-        <h3>3. Building Emotional Awareness</h3>
-        <p><strong>Self-Awareness:</strong> Reflect on your emotional responses during interactions with Suyie. Awareness of your emotions allows you to respond more thoughtfully.</p>
-        <p><strong>Active Listening:</strong> Practice listening without interrupting or judging. Use paraphrasing to confirm your understanding of Suyie’s feelings.</p>
-        <p><strong>Empathy Development:</strong> Put yourself in Suyie’s shoes to better appreciate her perspective and emotional experiences.</p>
-
-        <h2>Practical Exercises</h2>
-        <h3>Exercise 1: Emotional Journaling</h3>
-        <p>Keep a daily journal for one week. Record observations of Suyie’s emotional states, noting the context, her expressions, and your responses. Reflect on patterns and opportunities for improvement.</p>
-
-        <h3>Exercise 2: Active Listening Practice</h3>
-        <p>Engage in a 10-minute conversation with Suyie. Focus solely on listening, avoiding interruptions or unsolicited advice. Afterward, write down what you learned about her emotional state and how she felt during the conversation.</p>
-
-        <h3>Exercise 3: Empathy Role-Play</h3>
-        <p>Role-play a scenario where Suyie shares a challenging experience. Practice responding empathetically by validating her emotions and asking open-ended questions.</p>
-
-        <h2>Key Takeaways</h2>
+    <section id="course-details">
+        <h2 class="en">Course Details</h2>
+        <h2 class="zh" style="display:none;">課程詳情</h2>
+        <p class="en">This exclusive course is designed to help you master the art of comforting Suyie. Over 1-2 years, you'll learn personalized skills, emotional intelligence techniques, and advanced strategies to ensure Suyie's happiness.</p>
+        <p class="zh" style="display:none;">本課程專為幫助您掌握安慰素怡的藝術而設計。在 1-2 年內，您將學習個性化技能、情商技巧以及先進策略，確保素怡的幸福。</p>
         <ul>
-            <li>Understand the biological and psychological basis of emotions.</li>
-            <li>Recognize and interpret emotional cues effectively.</li>
-            <li>Build self-awareness and empathy to enhance emotional connection.</li>
+     <a href="module1.html" class="en">Module 1: Understanding Suyie's Emotions</a>
+        <a href="module1.html" class="zh" style="display:none;">模組 1：理解素怡的情感</a>
+        <a href="module2.html" class="en">Module 2: Personalized Comforting Language</a>
+        <a href="module2.html" class="zh" style="display:none;">模組 2：個性化安慰語言</a>
+        <a href="module3.html" class="en">Module 3: Action-Based Support Strategies</a>
+        <a href="module3.html" class="zh" style="display:none;">模組 3：行動為基礎的支持策略</a>
+        <a href="module4.html" class="en">Module 4: Advanced Suyie Psychology</a>
+        <a href="module4.html" class="zh" style="display:none;">模組 4：高級素怡心理學</a>
         </ul>
+        <div class="cta en" onclick="showSurprise()">Enroll Now</div>
+        <div class="cta zh" onclick="showSurprise()" style="display:none;">立即報名</div>
+        <div class="cta" onclick="sendCash()">Send Cash to Susie</div>
+        <div id="surprise" class="surprise">
+            <p>Loading a surprise for you...</p>
+        </div>
+        <div id="cash-response" class="surprise" style="display:none;">
+            <p>Processing your generous donation...</p>
+        </div>
+    </section>
+    <section id="testimonials">
+        <h2 class="en">What People Are Saying</h2>
+        <h2 class="zh" style="display:none;">學員評價</h2>
+        <p class="en">"This course completely changed my life. Now Suyie smiles every day!" - Graduate</p>
+        <p class="zh" style="display:none;">"這門課程徹底改變了我的生活。現在素怡每天都在微笑！" - 畢業生</p>
+        <p class="en">"I've never felt closer to Suyie. 10/10 would recommend." - Alumni</p>
+        <p class="zh" style="display:none;">"我從未感到與素怡如此親近。10/10，強烈推薦。" - 校友</p>
+    </section>
+    <section id="contact">
+        <h2 class="en">Contact Us</h2>
+        <h2 class="zh" style="display:none;">聯繫我們</h2>
+        <p class="en">Have questions? Reach out to us at <a href="mailto:info@suyi-comforting.com">info@suyi-comforting.com</a>.</p>
+        <p class="zh" style="display:none;">有任何問題？請通過電子郵件聯繫我們：<a href="mailto:info@suyi-comforting.com">info@suyi-comforting.com</a>。</p>
     </section>
     <footer>
-        <p>&copy; 2025 Master of Comforting Suyie. All rights reserved.</p>
+        <p class="en">&copy; 2025 Master of Comforting Suyie. All rights reserved.</p>
+        <p class="zh" style="display:none;">&copy; 2025 安慰素怡大師課程。保留所有權利。</p>
     </footer>
 </body>
 </html>
