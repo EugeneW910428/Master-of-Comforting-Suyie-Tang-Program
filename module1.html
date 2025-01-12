@@ -67,6 +67,16 @@
             list-style-type: square;
             padding-left: 20px;
         }
+        .visual-content {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .visual-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
         footer {
             background-color: #333;
             color: white;
@@ -78,50 +88,64 @@
             box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
         }
     </style>
+    <script>
+        function switchLanguage(lang) {
+            const englishContent = document.querySelectorAll('.en');
+            const chineseContent = document.querySelectorAll('.zh');
+            if (lang === 'en') {
+                englishContent.forEach(el => el.style.display = 'block');
+                chineseContent.forEach(el => el.style.display = 'none');
+            } else {
+                englishContent.forEach(el => el.style.display = 'none');
+                chineseContent.forEach(el => el.style.display = 'block');
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
-        <h1>Module 1: Understanding Suyie's Emotions</h1>
+        <h1 class="en">Module 1: Understanding Suyie's Emotions</h1>
+        <h1 class="zh" style="display:none;">模組 1：理解素怡的情感</h1>
     </header>
     <nav>
         <a href="index.html">Home</a>
         <a href="module2.html">Next Module</a>
+        <button onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('zh')">中文</button>
     </nav>
     <section>
-        <h2>Objective</h2>
-        <p>Learn the art of observing and interpreting subtle emotional cues to better understand Suyie's needs and respond with empathy and support.</p>
+        <h2 class="en">Objective</h2>
+        <h2 class="zh" style="display:none;">目標</h2>
+        <p class="en">Learn the art of observing and interpreting subtle emotional cues to better understand Suyie's needs and respond with empathy and support.</p>
+        <p class="zh" style="display:none;">學習觀察和解讀細微的情感線索的藝術，以更好地理解素怡的需求，並以同理心和支持做出回應。</p>
 
-        <h2>Content</h2>
-        <h3>1. The Science of Emotions</h3>
-        <p><strong>What Are Emotions?</strong> Emotions are complex psychological states that involve three components: subjective experience, physiological response, and behavioral expression. This section explores the connection between emotions and the brain, focusing on the limbic system and its role in emotional regulation.</p>
-        <p><strong>Why Emotions Matter in Relationships:</strong> Emotions act as signals that guide human interaction. Understanding how emotions affect behavior can help strengthen your bond with Suyie.</p>
+        <div class="visual-content">
+            <img src="https://via.placeholder.com/800x400" alt="Understanding Emotions Visualization">
+            <p class="en">A visual representation of emotional cues and expressions.</p>
+            <p class="zh" style="display:none;">情感線索和表達的可視化表示。</p>
+        </div>
 
-        <h3>2. Emotional Recognition Techniques</h3>
-        <p><strong>Microexpressions:</strong> Learn to identify fleeting facial expressions that reveal genuine emotions, even when someone tries to hide them.</p>
-        <p><strong>Body Language:</strong> Recognize how posture, gestures, and movement reflect emotional states. For example, crossed arms might signal discomfort or defensiveness.</p>
-        <p><strong>Vocal Cues:</strong> Analyze changes in tone, pitch, and speed of speech to detect underlying feelings.</p>
+        <h2 class="en">Content</h2>
+        <h2 class="zh" style="display:none;">內容</h2>
+        <h3 class="en">1. The Science of Emotions</h3>
+        <h3 class="zh" style="display:none;">1. 情感的科學</h3>
+        <p class="en"><strong>What Are Emotions?</strong> Emotions are complex psychological states that involve three components: subjective experience, physiological response, and behavioral expression. This section explores the connection between emotions and the brain, focusing on the limbic system and its role in emotional regulation.</p>
+        <p class="zh" style="display:none;"><strong>什麼是情感？</strong> 情感是涉及三個組成部分的複雜心理狀態：主觀經歷、生理反應和行為表達。本節探討情感與大腦之間的聯繫，重點關注邊緣系統及其在情感調節中的作用。</p>
 
-        <h3>3. Building Emotional Awareness</h3>
-        <p><strong>Self-Awareness:</strong> Reflect on your emotional responses during interactions with Suyie. Awareness of your emotions allows you to respond more thoughtfully.</p>
-        <p><strong>Active Listening:</strong> Practice listening without interrupting or judging. Use paraphrasing to confirm your understanding of Suyie’s feelings.</p>
-        <p><strong>Empathy Development:</strong> Put yourself in Suyie’s shoes to better appreciate her perspective and emotional experiences.</p>
+        <h3 class="en">2. Emotional Recognition Techniques</h3>
+        <h3 class="zh" style="display:none;">2. 情感識別技術</h3>
+        <p class="en"><strong>Microexpressions:</strong> Learn to identify fleeting facial expressions that reveal genuine emotions, even when someone tries to hide them.</p>
+        <p class="zh" style="display:none;"><strong>微表情：</strong> 學習識別短暫的面部表情，這些表情即使在試圖隱藏時也能揭示真實的情感。</p>
 
-        <h2>Practical Exercises</h2>
-        <h3>Exercise 1: Emotional Journaling</h3>
-        <p>Keep a daily journal for one week. Record observations of Suyie’s emotional states, noting the context, her expressions, and your responses. Reflect on patterns and opportunities for improvement.</p>
+        <h3 class="en">3. Building Emotional Awareness</h3>
+        <h3 class="zh" style="display:none;">3. 建立情感意識</h3>
+        <p class="en"><strong>Self-Awareness:</strong> Reflect on your emotional responses during interactions with Suyie. Awareness of your emotions allows you to respond more thoughtfully.</p>
+        <p class="zh" style="display:none;"><strong>自我意識：</strong> 反思與素怡互動過程中的情感反應。對情感的意識使您能夠更周全地做出回應。</p>
 
-        <h3>Exercise 2: Active Listening Practice</h3>
-        <p>Engage in a 10-minute conversation with Suyie. Focus solely on listening, avoiding interruptions or unsolicited advice. Afterward, write down what you learned about her emotional state and how she felt during the conversation.</p>
-
-        <h3>Exercise 3: Empathy Role-Play</h3>
-        <p>Role-play a scenario where Suyie shares a challenging experience. Practice responding empathetically by validating her emotions and asking open-ended questions.</p>
-
-        <h2>Key Takeaways</h2>
-        <ul>
-            <li>Understand the biological and psychological basis of emotions.</li>
-            <li>Recognize and interpret emotional cues effectively.</li>
-            <li>Build self-awareness and empathy to enhance emotional connection.</li>
-        </ul>
+        <h2 class="en">Practical Exercises</h2>
+        <h2 class="zh" style="display:none;">實踐練習</h2>
+        <p class="en">Engage in daily journaling and active listening practices to improve your understanding of Suyie's emotions.</p>
+        <p class="zh" style="display:none;">參與每日日記記錄和積極傾聽練習，以提高您對素怡情感的理解。</p>
     </section>
     <footer>
         <p>&copy; 2025 Master of Comforting Suyie. All rights reserved.</p>
